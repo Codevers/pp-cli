@@ -1,0 +1,152 @@
+.el-menu-vertical {
+    .el-sub-menu__title {
+        background: #F8FBFF;
+        border-radius: 8px;
+    }
+
+    .el-sub-menu {
+        margin: 15px 15px 0;
+    }
+
+    .el-sub-menu .el-menu-item {
+        height: 48px;
+        line-height: 48px;
+
+        span {
+            padding-left: 5px;
+            color: #989CB0;
+            margin-bottom: -15px;
+        }
+
+
+        &.is-active span {
+            color: @themeColor  !important;
+        }
+    }
+
+    .el-menu-item:hover {
+        background-color: transparent;
+
+        span {
+            color: @themeColor
+        }
+    }
+}
+
+.el-menu-horizontal {
+    background-color: transparent;
+    border: none;
+
+    .el-sub-menu__title {
+        color: #fff;
+        padding: 0 12px;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .el-sub-menu__icon-arrow {
+        display: none;
+    }
+}
+
+// el-table 
+@table-border-color: #d3d3d3;
+@table-border-color2: #dedede;
+
+.el-table:after,
+.el-table:before {
+    background-color: @table-border-color  !important;
+    z-index: 5;
+}
+
+.el-table__inner-wrapper:after,
+.el-table__inner-wrapper:before {
+    background-color: @table-border-color2  !important;
+    z-index: 5;
+}
+
+.el-table__header-wrapper th {
+    background-color: #F2F6FC !important;
+    border-color: @table-border-color  !important;
+
+    .cell {
+        color: #5b5b5b;
+    }
+}
+
+.el-table .cell {
+    padding: 0 7px;
+}
+
+.el-table__body td {
+    border-color: @table-border-color  !important;
+}
+
+// 定义表头上下边距
+.el-table .el-table__cell {
+    padding: 5px 0;
+}
+
+//表格字体统一更改颜色
+.el-table {
+    color: #323232;
+}
+
+//处理表格展示后 浏览器忽略中间空格问题
+// .el-table .cell,
+.el-table .cell.el-tooltip {
+    white-space: pre;
+}
+
+// 定义表空数据
+.el-scrollbar__view {
+    height: 100%;
+
+    .el-table__empty-block {
+        height: 100% !important;
+
+        .el-table__empty-text {
+            display: block;
+            width: 240px;
+            height: 180px;
+            background: url('../assets/svg/data-empty.svg') no-repeat;
+            color: transparent;
+            text-indent: -99999px;
+        }
+    }
+}
+
+// el-dialog
+.el-dialog__header {
+    background: url('../assets/img/dialog_bg.jpg') no-repeat;
+    background-size: cover;
+    margin-right: 0;
+    padding: 10px 0;
+
+    .el-dialog__title {
+        color: #fff
+    }
+
+    .el-dialog__headerbtn {
+        color: #fff;
+        top: 4px;
+        height: 42px;
+
+        .el-dialog__close {
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+}
+
+// 改变tip宽度
+// .el-popper {
+//         max-width: 650px !important;
+//     }
+// // 专家评分结果 el-tooltip 框随滚动条滚动消失
+// .el-popper[data-popper-reference-hidden] {
+//     visibility: hidden;
+//     pointer-events: none;
+// }

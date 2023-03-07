@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工程造价咨询行业优秀企业和个人申报系统</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+<script>
+  function isIE() {
+    return navigator.userAgent.toLowerCase().indexOf('trident') > -1 ? true : false;
+  }
+  if (isIE()) {
+    window.location.href = 'notSupport.html'
+  }
+</script>
+
+</html>

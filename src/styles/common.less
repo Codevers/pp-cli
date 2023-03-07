@@ -1,0 +1,280 @@
+// 主内容整体布局
+.main-content {
+  // padding: 5px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  .main-form-head {
+    padding: 20px 25px 2px;
+    background: #fff;
+    // border: 1px solid #e8e9eb;
+    // box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1100);
+    // margin-bottom: 15px;
+    margin-bottom: 8px;
+    --el-header-height: auto;
+    --el-header-padding: 0;
+  }
+
+  .main-table-content {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background: #fff;
+    // border: 1px solid #e8e9eb;
+    // box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1100);
+  }
+
+  .main-table-body {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .main-table {
+    flex: 1;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .main-table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+
+    .pagination-div {
+      padding-top: 0;
+    }
+  }
+}
+
+.auto-flex-form {
+  .el-form-item {
+    width: 100%;
+  }
+
+  .el-select {
+    width: 100%;
+  }
+
+  .search-btn-div {
+    width: 100%;
+
+    .el-form-item__content {
+      width: 100%;
+      .abs-right;
+    }
+
+  }
+
+  .search-btn-bottom {
+    width: 100%;
+
+    .el-form-item__content {
+      width: 100%;
+      display: flex;
+      align-items: flex-end
+    }
+  }
+}
+
+.dialog-footer-right {
+  .abs-right;
+}
+
+.operation-buttons-div {
+  padding-bottom: 15px;
+  .abs-right;
+}
+
+.pagination-div {
+  padding-top: 12px;
+  .abs-right;
+}
+
+.main-header-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+
+  .main-title {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.85);
+    .abs-middle;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      left: -10px;
+      // top: 4px;
+      width: 4px;
+      height: 15px;
+      background: #007ffd;
+      border-radius: 2px;
+    }
+  }
+
+  .main-btns {
+    display: flex;
+
+    .el-button {
+      margin-left: 10px;
+    }
+  }
+}
+
+// 主内容页签
+.header-tabs {
+  height: 42px;
+  min-height: 42px;
+  background-color: #eff2fa;
+  display: flex;
+
+  >div {
+    padding: 0 15px;
+    .abs-center;
+    cursor: pointer;
+    font-size: 15px;
+
+    &.selected {
+      border-top: 4px solid #007ffd;
+      background-color: #fff;
+      color: #007ffd;
+    }
+  }
+}
+
+// 导航栏模式卡片样式
+.nav-mode-card {
+  display: flex
+}
+
+.nav-mode-card__item {
+  position: relative;
+  width: 56px;
+  height: 48px;
+  margin-right: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #f0f2f5;
+  border-radius: 4px;
+  box-shadow: 0 1px 2.5px #0000002e;
+}
+
+.nav-mode-card__item:before,
+.nav-mode-card__item:after {
+  position: absolute;
+  content: ""
+}
+
+.nav-mode-card__item--sidebar:before,
+.nav-mode-card__item--light:before {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 33%;
+  height: 100%;
+  background-color: #007FFD;
+  border-radius: 4px 0 0 4px
+}
+
+.nav-mode-card__item--sidebar:after,
+.nav-mode-card__item--light:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: #fff
+}
+
+.nav-mode-card__item--mix:before {
+  top: 0;
+  left: 0;
+  width: 33%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 4px 0 0 4px
+}
+
+.nav-mode-card__item--mix:after {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 25%;
+  background-color: #007FFD
+}
+
+.nav-mode-card__item--top-menu:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: #007FFD
+}
+
+.nav-mode-card__item--dark {
+  background-color: #007FFD
+}
+
+.nav-mode-card__item--mix-sidebar:before {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 25%;
+  height: 100%;
+  background-color: #007FFD;
+  border-radius: 4px 0 0 4px
+}
+
+.nav-mode-card__item--mix-sidebar:after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background-color: #fff
+}
+
+.nav-mode-card__item--mix-sidebar .mix-sidebar {
+  position: absolute;
+  left: 25%;
+  width: 15%;
+  height: 100%;
+  background-color: #fff
+}
+
+.nav-mode-card__item:hover,
+.nav-mode-card__item--active {
+  outline: 2px solid #0960bd
+}
+
+.nav-mode-card__item:hover:before,
+.nav-mode-card__item--active:before,
+.nav-mode-card__item:hover:after,
+.nav-mode-card__item--active:after {
+  border-radius: 0
+}
+
+// 地图toolTip
+.map-tool-tips {
+  width: 220px;
+  height: 125px;
+  padding: 20px;
+  background-color: #062043;
+  border: 1px solid #064CA1;
+
+  h4 {
+    font-size: 18px;
+    color: #E5BA09
+  }
+
+  p {
+    margin-top: 12px;
+    color: #fff
+  }
+
+}

@@ -1,0 +1,166 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+input,
+blockquote,
+p,
+th,
+td,
+button {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+address,
+caption,
+code,
+dfn,
+strong,
+th,
+var,
+cite,
+em,
+i,
+b {
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+html,
+body {
+  font-size: 14px;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
+  height: 100%;
+  color: #333;
+  background: #f4f4f7;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+  text-align: center;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+caption,
+th,
+td {
+  text-align: center;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a,
+ins {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+a:active,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:focus,
+textarea,
+select,
+button,
+input {
+  outline: none;
+  border: 0;
+}
+
+input,
+textarea {
+  -webkit-appearance: none;
+}
+
+/* 解决chrome记住密码后，导致的input背景色 */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset;
+}
+
+#app {
+  height: 100%;
+}
+
+#nprogress .bar {
+  background: #ffbe5c !important;
+  top: 60px !important;
+  height: 2px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #ffbe5c, 0 0 0px #ffbe5c !important;
+}
+
+#nprogress .spinner {
+  top: 22px !important;
+  right: 7px !important;
+}
+
+#nprogress .spinner-icon {
+  border-top-color: #ffbe5c !important;
+  border-left-color: #ffbe5c !important;
+}
+
+.init-load-transition {
+  transition: none 0s !important;
+}
