@@ -28,40 +28,17 @@ export let rootRoute = {
     component: LAYOUT
 }
 
-// 内页路由（与权限无关，通常可以用于详情）
-// 注意！path必须保持和组件路径一致（replace正则：'@/views|.vue'），避免页面被缓存
+// 详情路由（通常是一级路由，为了避免权限控制，可在此处加入白名单）
+// 注意！path必须保持和组件路径一致
+// 免缓存规则：replace正则：'@/views|.vue'）
 // 例如：导入路径：@/views/a/b/c.vue，则path为：/a/b/c
 export const WithInRoutes = [
-    {
-        path: '/selection/standard/setStandard',
-        name: '/selection/standard/setStandard',
-        component: () => import('@/views/selection/standard/setStandard.vue')
-    },
-    {
-        path: '/withIn/standardDetail',
-        name: '/withIn/standardDetail',
-        component: () => import('@/views/selection/standard/setStandard.vue')
-    },
-    {
-        name: '/wel/announcement/lock-announcement',
-        path: '/wel/announcement/lock-announcement',//查看通知公告页面
-        component: () => import('@/views/wel/announcement/lock-announcement.vue')
-    },
-    {
-        path: '/wel/enterpriseKpi/notice',//认定须知页面
-        name: '/wel/enterpriseKpi/notice',
-        component: () => import('@/views/wel/enterpriseKpi/notice.vue')
-    },
-    {
-        path: '/wel/enterpriseKpi/index',//我的填报页面
-        name: '/wel/enterpriseKpi/index',
-        component: () => import('@/views/wel/enterpriseKpi/index.vue')
-    },
-    {
-        name: '/dataAudit/index',
-        path: '/dataAudit/index',//资料审核  省评市评-待办/已办页面使用
-        component: () => import('@/views/dataAudit/index.vue')
-    }
+    // demo
+    // {
+    //     path: '/selection/standard/setStandard',
+    //     name: '/selection/standard/setStandard',
+    //     component: () => import('@/views/selection/standard/setStandard.vue')
+    // },
 ]
 
 // 无效路由（无效路由、无权路由，不进行抽离了，跳转逻辑公用）

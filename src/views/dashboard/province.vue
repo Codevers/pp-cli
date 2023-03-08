@@ -163,10 +163,7 @@ const solarToLunar = (slotData) => {
 
 <template>
   <div class="main-content">
-    <!-- <img src="@/assets/img/Artwork.jpg" alt="" class="banner" /> -->
-    <div class="headeImg">
-      <img src="@/assets/img/headerTitle2.png" alt="" class="headeTitle" />
-    </div>
+    <div class="headeImg"></div>
     <section class="content">
       <el-row :gutter="10">
         <el-col :span="14">

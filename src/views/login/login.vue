@@ -28,7 +28,7 @@ const question = ref('');
 const userInfo = ref('');
 const imgSource = ref([]);
 const userStore = useUserStore();
-const chooseTab = ref('enterprise');
+const chooseTab = ref('admin');
 // const { setNoticeDialog, noticeDialog } = userStore;
 const tips = new Map([
   ['enterprise', '请输入企业统一社会信用代码或个人会员身份证号'],
@@ -46,8 +46,8 @@ watch(
 
 const state = reactive({
   ruleForm: {
-    account: '',
-    password: ''
+    account: 'shengxh',
+    password: 'abc@1234'
   },
   rules: {
     account: [
@@ -69,20 +69,10 @@ const state = reactive({
 });
 const tabs = [
   {
-    type: 'enterprise',
-    label: '企业/个人登录',
-    placeholder: '请输入统一社会信用代码/个人身份证号'
-  },
-  {
     type: 'admin',
     label: '管理员登录',
     placeholder: '请输入您的登录账号'
   },
-  {
-    type: 'expert',
-    label: '专家登录',
-    placeholder: '请输入您的身份证号'
-  }
 ];
 const { ruleForm, rules } = toRefs(state);
 const getRandomImgs = (num) => {
@@ -267,16 +257,14 @@ const setDialogVisible = (isTrue) => {
               <el-form label-position="top" :rules="rules" :model="ruleForm" ref="loginForm"
                 @keyup.enter.native="submitForm">
                 <el-tabs :stretch="true" v-model="activeName" @tab-click="handleClick">
-                  <el-tab-pane v-for="(item, index) in tabs" :key="index" :label="item.label" :name="item.type">
                     <el-form-item prop="account">
                       <el-input type="text" clearable maxlength="20" v-model.trim="ruleForm.account"
-                        :prefix-icon="Postcard" autocomplete="off" :placeholder="item.placeholder"></el-input>
+                        :prefix-icon="Postcard" autocomplete="off" placeholder="请输入账号"></el-input>
                     </el-form-item>
                     <el-form-item prop="password">
                       <el-input type="password" clearable show-password maxlength="20" v-model.trim="ruleForm.password"
                         :prefix-icon="LocationFilled" autocomplete="off" placeholder="请输入密码"></el-input>
                     </el-form-item>
-                  </el-tab-pane>
                 </el-tabs>
               </el-form>
             </el-col>
