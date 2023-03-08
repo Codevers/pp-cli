@@ -1,9 +1,3 @@
-/*
- * @Description: 
- * @Autor: wsy
- * @Date: 2022-08-25 14:33:40
- * @LastEditTime: 2022-09-01 20:38:41
- */
 import axios from "axios";
 
 //获取正在进行的认定活动

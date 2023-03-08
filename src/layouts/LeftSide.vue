@@ -1,30 +1,24 @@
 <script setup>
 import { reactive, computed, toRaw, ref } from 'vue';
-import MenuTree from './MenuTree.vue';
 import { useRouter } from 'vue-router';
 import { appStoreWithOut } from '@/store/modules/app';
 import { usePermissionStore } from '@/store/modules/permission';
+import MenuTree from './MenuTree.vue';
 const permissionStore = usePermissionStore();
-const { navMode } = appStoreWithOut;
-
 const router = useRouter();
 const state = reactive({
   showMenu: true,
   expandKeys: ['0']
 });
-
 const activeRoute = computed(() => {
   return toRaw(router).currentRoute.value.fullPath;
 });
-
 const isCollapse = ref(false);
 
 function expandChange(key) {
   state.expandKeys = [key.toString()];
 }
-// function handleControl() {
-//   isCollapse.value = !isCollapse.value;
-// }
+
 </script>
 <template>
   <el-aside :class="appStoreWithOut.navMode == 2 ? 'aside-horizontal' : 'aside-vertical'">
@@ -39,7 +33,6 @@ function expandChange(key) {
     >
       <MenuTree :menuList="permissionStore.sideMenu"></MenuTree>
     </el-menu>
-    <!-- <div class="side-control" @click="handleControl">折叠</div> -->
   </el-aside>
 </template>
 <style scoped lang="less">

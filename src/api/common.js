@@ -27,7 +27,6 @@ export const GetActivityList = () => axios.get('/api/selection/activity/ddl');
 export const GetActivityListNew = (params) => axios.get('/api/selection/activity/selecting', { params });
 // 获取正在认定活动（下拉字典）数量
 export const GetActivityCount = () => axios.get('/api/selection/activity/effective/count');
-
 // 根据页面模块获取认定活动
 export const getActivitysByType = (params) => axios.get('/api/selection/activity/type', { params });
 // 根据页面模块获取认定活动数量

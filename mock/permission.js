@@ -5,7 +5,7 @@ export const UserMenuList = [
         "id": "b7650a02-250e-4d64-893f-048db8260c1b",
         "name": "省评工作台",
         "path": "",
-        "component": "workbench/province",
+        "component": "dashboard/province",
         "icon": "",
         "children": null
     },

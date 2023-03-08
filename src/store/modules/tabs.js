@@ -20,7 +20,6 @@ function syncTabs() {
 // tabs store，多页签模式
 export const useTabsStore = defineStore('tabs', {
   state: () => ({
-    // tabs: JSON.parse(window.sessionStorage.getItem('tabs')) || [useUserStore().getHomeRoute]
     tabs: syncTabs(),
     pageCloseName: ''
   }),
@@ -42,7 +41,6 @@ export const useTabsStore = defineStore('tabs', {
         name: route.name,
         path: route.path,
         title: route.meta?.title,
-        // activePath: route.meta.activeMenu,
         query: route.query,
         params: route.params,
       });

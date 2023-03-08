@@ -1,20 +1,15 @@
 <script setup>
 import { ref } from 'vue';
-import { useRouter } from 'vue-router';
 import { useUserStore } from '@/store/modules/user';
 import { appStoreWithOut } from '@/store/modules/app';
 import LeftSide from './LeftSide.vue';
 import { ElMessageBox } from 'element-plus';
 import SystemConfig from './SystemConfig.vue';
-
 const userStore = useUserStore();
-const router = useRouter();
 const systemConfig = ref(null);
-const { organizationName, userName, typeKey } = userStore.userInfo;
-//适配不同接口的显示字段
-const nickName =
-  userStore.loginType === 'enterprise' ? userName : `${userName} (${organizationName})`;
-
+const { organizationName, userName } = userStore.userInfo;
+const nickName = `${userName} (${organizationName})`;
+// 退出登录
 function handleSignOut() {
   ElMessageBox.confirm('您确认要退出系统吗？', '提示', {
     confirmButtonText: '确认',
@@ -27,18 +22,13 @@ function handleSignOut() {
 </script>
 <template>
   <div class="header" id="layoutHeader">
-    <div class="left">
-      <SvgIcon v-if="typeKey == '0' || typeKey == '1'" name="header-logo1" size="550px" />
-      <SvgIcon v-else name="header-logo2" size="550px" />
+    <div class="logo">
+      <span style="font-size:24px;color:#fff">未来软件模板项目</span>
     </div>
-    <div class="center" v-if="appStoreWithOut.navMode == 2">
+    <div style="flex:1" v-if="appStoreWithOut.navMode == 2">
       <LeftSide />
     </div>
-    <div class="right">
-      <router-link class="pubilcityName" :to="{ path: '/publicity/index' }" tag="a" target="_blank">
-        <SvgIcon name="public-site" size="16" color="#fff" style="margin-right: 5px" />
-        公示平台
-      </router-link>
+    <div class="user-set">
       <div class="nickname">
         <span>{{ nickName }}</span>
       </div>
@@ -60,21 +50,16 @@ function handleSignOut() {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color: #007ffd;
   background: linear-gradient(90deg, #1d42ab, #2173dc, #1e93ff);
   padding: 0 30px;
 
-  .left {
-    margin-top: 7px;
+  .logo {
     overflow: hidden;
     font-weight: bold;
+    vertical-align: middle;
   }
 
-  .center {
-    flex: 1;
-  }
-
-  .right {
+  .user-set {
     display: flex;
     align-items: center;
 

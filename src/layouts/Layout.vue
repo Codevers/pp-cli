@@ -1,19 +1,11 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { appStoreWithOut } from '../store/modules/app';
 import Header from './Header.vue';
 import LeftSide from './LeftSide.vue';
-import { appStoreWithOut, useAppStoreWithOut } from '../store/modules/app';
-import { useFullscreen } from 'v3hooks';
 const currentRoute = useRoute();
-const viewKey = computed(() => {
-  return currentRoute.path || Date.now();
-});
-const { navMode, destroyNames } = useAppStoreWithOut();
-// const { navMode, destroyNames } = appStoreWithOut;
-const fullScreen = ref();
-const [isFullscreen, { toggle }] = useFullscreen(fullScreen);
-const mainContentNode = () => document.getElementById('xxx');
+const viewKey = computed(() => currentRoute.path || Date.now());
 </script>
 <template>
   <el-container class="layout">
@@ -22,25 +14,16 @@ const mainContentNode = () => document.getElementById('xxx');
     </el-header>
     <el-container class="container">
       <LeftSide v-if="appStoreWithOut.navMode == 1"></LeftSide>
-
       <el-container class="content">
         <el-header height="40px" style="background-color: #ebf4ff">
           <PageTabs></PageTabs>
         </el-header>
         <el-main>
-          <!-- <div ref="fullScreen" class="content-main" id="xxx">
-            <el-tooltip :content="isFullscreen ? '退出全屏' : '全屏模式'" placement="left">
-              <div class="full-screen-view" @click="toggle">
-                <el-icon class="full-icon"><FullScreen /></el-icon>
-              </div>
-            </el-tooltip> -->
-
           <router-view v-slot="{ Component, route }">
             <keep-alive :exclude="appStoreWithOut.destroyNames">
               <component :is="Component" :key="viewKey" />
             </keep-alive>
           </router-view>
-          <!-- </div> -->
         </el-main>
       </el-container>
     </el-container>

@@ -1,7 +1,7 @@
 // token key
 export const TOKEN_KEY = 'Token';
-// 约定工作台的目录名
-export const INDEX_DIR_KEY = 'workbench';
+// 约定首页的目录名
+export const INDEX_DIR_KEY = 'dashboard';
 // 约定的根组件名称
 export const ROOT_ROUTE_NAME = 'layout';
 // 异常组件标识

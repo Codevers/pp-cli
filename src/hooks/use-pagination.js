@@ -2,7 +2,7 @@
  $ @Description 分页hooks
  $ @Author Peng.p
  $ @Date 2022-07-29 14:30:03
- $ @LastEditTime 2022-09-21 16:21:17
+ $ @LastEditTime 2023-03-08 11:04:22
  */
 import { ref, onMounted, toRefs, reactive } from 'vue'
 import { pageConfig } from '@/config/pagination';
@@ -67,7 +67,6 @@ export default function usePagination(params = {}, api, config = optionConfig) {
   }
   // 分页组件触发
   function handlePageChange(val) {
-    // const { pageSize, pageIndex } = toRefs(val)
     const { pageSize, pageIndex } = val
     page.pageIndex = pageIndex || page.pageIndex
     page.pageSize = pageSize || page.pageSize
@@ -75,8 +74,6 @@ export default function usePagination(params = {}, api, config = optionConfig) {
   }
   async function run($event, paramsApi) {
     const apiParmas = $event?.target ? paramsApi : $event;
-    // const { index } = toRefs({ index: 1 })
-    // page.pageIndex = index // 重置分页
     page.pageIndex = 1 // 重置分页
     return await getData(apiParmas)
   }

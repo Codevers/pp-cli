@@ -14,23 +14,16 @@ export const useUserStore = defineStore('user', {
     state: () => ({
         // 用户信息是否已存储
         isAddedUserInfo: false,
-        // 用户信息 typeKey
-        // [Description("企业会员")]
-        // enterprise = 0,
-        // [Description("个人会员")]
-        // personal =1,
-        // [Description("专家会员")]
-        // professional=2
+        // 用户信息
         userInfo: {},
-        // 鉴权凭证 sessionStorage
-        token: Cookies.get(TOKEN_KEY) ? Cookies.get(TOKEN_KEY) : '',
-        //token: sessionStorage.getItem(TOKEN_KEY) ? sessionStorage.getItem(TOKEN_KEY) : '',
-        // 角色工作台
+        // 鉴权凭证
+        token: Cookies.get(TOKEN_KEY) || '',
+        // 首页
         homePath: '',
+        // 首页的页签标题
         homeTitle: '',
         //登录类型
         loginType: Cookies.get(LOGIN_TYPE) ? Cookies.get(LOGIN_TYPE) : '',
-        //loginType: sessionStorage.getItem(LOGIN_TYPE) ? sessionStorage.getItem(LOGIN_TYPE) : '',
         // 系统初次登陆加载状态
         loginLoading: false,
         // 登录须知 弹窗
@@ -69,7 +62,6 @@ export const useUserStore = defineStore('user', {
         },
         setToken(value) {
             Cookies.set(TOKEN_KEY, value, { expires: 10 });
-            // window.sessionStorage.setItem(TOKEN_KEY, value);
             this.token = value
         },
         setUserInfo(value) {
@@ -83,7 +75,6 @@ export const useUserStore = defineStore('user', {
         },
         setLoginType(value) {
             Cookies.set(LOGIN_TYPE, value, { expires: 10 });
-            //window.sessionStorage.setItem(LOGIN_TYPE, value);
             this.loginType = value
         },
         setLoginState(value) {
